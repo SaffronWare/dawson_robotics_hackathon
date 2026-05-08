@@ -1,0 +1,30 @@
+{
+    "python.defaultInterpreterPath": "${workspaceFolder}/.venv/bin/python",
+    "python.analysis.extraPaths": [
+        "${workspaceFolder}",
+        "~/.micropico-stubs/included"
+    ],
+    "python.analysis.diagnosticSeverityOverrides": {
+        "reportMissingImports": "none"
+    },
+    "files.exclude": {
+        ".venv": true,
+        "__pycache__": true,
+        ".mypy_cache": true,
+        ".ruff_cache": true
+    },
+    "terminal.integrated.cwd": "${workspaceFolder}",
+    "cursorpyright.analysis.diagnosticSeverityOverrides": {
+        "reportMissingImports": "none"
+    },
+    "cursorpyright.analysis.extraPaths": [
+        "${workspaceFolder}"
+    ],
+    "python.languageServer": "Pylance",
+    "python.analysis.typeCheckingMode": "basic",
+    "python.terminal.activateEnvironment": false,
+    "micropico.openOnStart": true,
+    "python.analysis.typeshedPaths": [
+        "~/.micropico-stubs/included"
+    ]
+}

@@ -1,0 +1,209 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Pico: list serial devices",
+      "type": "shell",
+      "command": "${workspaceFolder}/.venv/bin/python",
+      "args": [
+        "-m",
+        "mpremote",
+        "connect",
+        "list"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "Pico: deploy files",
+      "type": "shell",
+      "command": "${workspaceFolder}/.venv/bin/python",
+      "args": [
+        "-m",
+        "mpremote",
+        "fs",
+        "cp",
+        "pico_car.py",
+        "main.py",
+        "states.py",
+        "sensors.py",
+        "motors.py",
+        ":",
+        "+",
+        "reset"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "Pico: deploy support files only",
+      "type": "shell",
+      "command": "${workspaceFolder}/.venv/bin/python",
+      "args": [
+        "-m",
+        "mpremote",
+        "fs",
+        "cp",
+        "pico_car.py",
+        "states.py",
+        "sensors.py",
+        "motors.py",
+        ":"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "Pico: smoke test sensors",
+      "type": "shell",
+      "command": "${workspaceFolder}/.venv/bin/python",
+      "args": [
+        "-m",
+        "mpremote",
+        "run",
+        "tools/smoke_test.py"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "Pico: motor test sequence",
+      "type": "shell",
+      "command": "${workspaceFolder}/.venv/bin/python",
+      "args": [
+        "-m",
+        "mpremote",
+        "run",
+        "tools/motor_test.py"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "Pico: motor battery diagnostic",
+      "type": "shell",
+      "command": "${workspaceFolder}/.venv/bin/python",
+      "args": [
+        "-m",
+        "mpremote",
+        "run",
+        "tools/motor_battery_diagnostic.py"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "Pico: ultrasonic readout",
+      "type": "shell",
+      "command": "${workspaceFolder}/.venv/bin/python",
+      "args": [
+        "-m",
+        "mpremote",
+        "run",
+        "tools/ultrasonic_readout.py"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "Pico: simple line follow",
+      "type": "shell",
+      "command": "${workspaceFolder}/.venv/bin/python",
+      "args": [
+        "-m",
+        "mpremote",
+        "run",
+        "tools/line_follow_simple.py"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "Pico: line until obstacle",
+      "type": "shell",
+      "command": "${workspaceFolder}/.venv/bin/python",
+      "args": [
+        "-m",
+        "mpremote",
+        "run",
+        "tools/line_until_obstacle.py"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "Pico: drive until obstacle",
+      "type": "shell",
+      "command": "${workspaceFolder}/.venv/bin/python",
+      "args": [
+        "-m",
+        "mpremote",
+        "run",
+        "tools/drive_until_obstacle.py"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "Pico: line sensor readout",
+      "type": "shell",
+      "command": "${workspaceFolder}/.venv/bin/python",
+      "args": [
+        "-m",
+        "mpremote",
+        "run",
+        "tools/line_sensor_readout.py"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "Pico: manual control test",
+      "type": "shell",
+      "command": "${workspaceFolder}/.venv/bin/python",
+      "args": [
+        "-m",
+        "mpremote",
+        "run",
+        "tools/manual_control_test.py"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "Pico: IR remote readout",
+      "type": "shell",
+      "command": "${workspaceFolder}/.venv/bin/python",
+      "args": [
+        "-m",
+        "mpremote",
+        "run",
+        "tools/ir_remote_readout.py"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "Pico: run main from RAM",
+      "type": "shell",
+      "command": "${workspaceFolder}/.venv/bin/python",
+      "args": [
+        "-m",
+        "mpremote",
+        "run",
+        "main.py"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "Pico: open REPL",
+      "type": "shell",
+      "command": "${workspaceFolder}/.venv/bin/python",
+      "args": [
+        "-m",
+        "mpremote",
+        "repl"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "Pico: show device files",
+      "type": "shell",
+      "command": "${workspaceFolder}/.venv/bin/python",
+      "args": [
+        "-m",
+        "mpremote",
+        "fs",
+        "ls"
+      ],
+      "problemMatcher": []
+    }
+  ]
+}
