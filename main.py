@@ -1,5 +1,8 @@
 from pico_car import *
 from time import sleep
+import sensors, motors
+
+from time import sleep_ms
 
 refresh = 100
 
@@ -20,7 +23,7 @@ def line_following():
 
         
 
-
+        
         car.Car_Stop()
         sleep(0.02/refresh)
         out_left, in_left = Tracing_OL.value(), Tracing_IL.value()
@@ -57,7 +60,6 @@ def line_following():
 
             if timers > 0.1:
                 return
-            #print('goyy')
 
         
             #("S")
@@ -69,21 +71,33 @@ def line_following():
 
 def go_in_box():
     sensor = ultrasonic()
-    distance = 0
+    distance = 10000
     times = 0
-    while True:
-        
+    while distance >= 60:
         distance = sensor.Distance_accurate()
-        print("distance:", distance)
+        sleep(1/8)
+        car.Car_Run(500,500)
+        #car.Car_Left(100,100)
+        times += 1/8
+    car.Car_Left(40,40)
+    sleep(0.1)
+    times = 0
+    while distance > 45:
+        distance = sensor.Distance_accurate()
+        
+        times  += 1/8
+        car.Car_Run(100,100)
+        sleep(1/8)
+    car.Car_Stop()
 
+def manual_control():
+    while True:
+        cmd = sensors.manual_command()
+        print(cmd)
+        motors.apply_app_command(cmd)
+        sleep_ms(50)
 
-        if distance <= 30 and times > 0.5:
-            car.Car_Stop()
-            return
-
-        car.Car_Run(500, 500)
-        sleep(1/10)
-        times += 1/10
 
 line_following()
 go_in_box()
+manual_control()

@@ -55,8 +55,7 @@ def spin_left(speed: float = 0.35) -> None:
     power = _pwm(speed)
     if _motor is not None:
         _motor.Car_Left(power, power)
-
-
+#bigbootymaster
 def spin_right(speed: float = 0.35) -> None:
     power = _pwm(speed)
     if _motor is not None:
@@ -66,16 +65,16 @@ def spin_right(speed: float = 0.35) -> None:
 def apply_app_command(cmd: str) -> None:
     """Map app commands to robot motion."""
     if cmd == "forward":
-        forward(100)
+        forward(1)
     elif cmd == "back":
-        backward(100)
+        backward(1)
     elif cmd == "left":
-        turn_left(100)
+        turn_left(0.35)
     elif cmd == "right":
-        turn_right(10)
+        turn_right(0.35)
     elif cmd == "left_spin":
-        spin_left(100)
+        spin_left(0.35)
     elif cmd == "right_spin":
-        spin_right(100)
+        spin_right(0.35)
     else:
         stop()
