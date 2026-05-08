@@ -66,13 +66,13 @@ def spin_right(speed: float = 0.35) -> None:
 def apply_app_command(cmd: str) -> None:
     """Map app commands to robot motion."""
     if cmd == "forward":
-        forward()
+        forward(0.7)
     elif cmd == "back":
         backward()
     elif cmd == "left":
         turn_left()
     elif cmd == "right":
-        turn_right()
+        turn_right(0.2)
     elif cmd == "left_spin":
         spin_left()
     elif cmd == "right_spin":
